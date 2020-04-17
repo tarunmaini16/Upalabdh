@@ -1,0 +1,72 @@
+body
+{
+background-color:#ccd9ff;
+}
+
+#checkbox_container
+	{
+	width:470px;
+	font-family:verdana;
+	font-size:12px;
+	}
+
+.checkbox_group input
+	{
+	float:left;
+	margin-right:10px;
+	}
+
+.checkbox_group label
+	{
+	width:90px;
+	float:left;
+	margin-right:10px;
+	color: black;
+	font-weight: 600;
+	}
+
+.checkbox_group
+	{
+        zoom:1; /* dla IE < 8 */
+     }
+
+.checkbox_group:after {
+        content:'';
+        display:block;
+        clear:both;
+}
+
+.saved {
+color:BLUE;
+font-weight:bold;
+padding:7px 20px;
+margin-bottom:2px;
+//border-bottom:1px solid #eeeeee;
+}
+
+#status
+{
+text-align:center;
+font-size:15px;
+}
+
+#upper_button_container
+{
+margin:15px 0;
+text-align:center;
+}
+
+#lower_button_container
+{
+margin:15px 0;
+text-align:center;
+}
+
+#button_check
+{
+margin-left: 40px;
+}
+#amazon_list{
+	text-align:center;
+	font-size:12px;
+}

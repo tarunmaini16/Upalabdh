@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checbox list</title>
+    <link href="popup.css" rel="stylesheet">
+    <script src="popup.js"></script>
+</head>
+<body>
+<h1>
+    <center><font color="#ff1493"> TBD </font></center>
+</h1>
+<div id="checkbox_container">
+
+
+    <div id="upper_button_container">
+        <button id="getCurrentUrl">Add_Product</button>
+        <label id="AddedUrl"></label>
+        <!--		<button id="button_save">Save</button>-->
+        <!--        <button id="button_check">(Un)Check</button>-->
+    </div>
+    <div class="checkbox_group">
+        <input type="checkbox" id="Amazon"/><label for="Amazon">Amazon</label>
+    </div>
+    <div class="cart_items">
+        <label id="amazon_list"></label>
+    </div>
+    <div class="checkbox_group">
+        <input type="checkbox" id="BigBasket"/><label for="BigBasket">BigBasket</label>
+    </div>
+    <div class="checkbox_group">
+        <input type="checkbox" id="Flipkart"/><label for="Flipkart">Flipkart</label>
+    </div>
+    <div class="checkbox_group">
+        <input type="checkbox" id="Grofers"/><label for="Grofers">Grofers</label>
+    </div>
+    <div id="lower_button_container">
+        <label for="allItems">Drop Item:</label>
+        <select id="allItems">
+            <option value="volvo">Hersheys-Chocolate-Syrup</option>
+            <option value="saab">Hersheys-Chocolate-Syrup</option>
+            <option value="opel">Hersheys-Chocolate-Syrup</option>
+            <option value="audi">Hersheys-Chocolate-Syrup</option>
+        </select>
+        <button id="removeProduct">Remove_Product</button>
+        <label id="itemRemoved"></label>
+    </div>
+</div>
+<div id="status"></div>
+</body>
+</html>
