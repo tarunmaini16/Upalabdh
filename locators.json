@@ -1,8 +1,8 @@
 {
     "amazon": [
         {"#availability > span": "1_In stock. _!!"},
-        {"#availability > span": "2_Currently unavailable."},
-        {"#ddmDeliveryMessage > span": "3_Available-But not deliverable at your pincode"}
+        {"#ddmDeliveryMessage > span": "2_Available-But not deliverable at your pincode"},
+        {"#availability > span": "3_Currently unavailable."},
     ], "flipkart": [
         {"button[class='_2AkmmA _2Npkh4 _2MWPVK _2K_ZRu']": "1_ADD TO BASKET"},
         {"button[class='_2AkmmA _2Npkh4 _2MWPVK']": "1_ADD TO CART"},
