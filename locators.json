@@ -7,7 +7,7 @@
         {"button[class='_2AkmmA _2Npkh4 _2MWPVK _2K_ZRu']": "1_ADD TO BASKET"},
         {"button[class='_2AkmmA _2Npkh4 _2MWPVK']": "1_ADD TO CART"},
         {"div[class='_13J5uS']": "2_Currently out of stock in this area."},
-        {"div[class='_1mzTZn']": "2_This item is currently out of stock"},
+        {"div[class='_1mzTZn']": "3_This item is currently out of stock"},
         {"div[class='_9-sL7L']": "3_Sold Out"},
         {"div[class='_1mzTZn']": "3_Sold Out"}
     ], "bigbasket": [
