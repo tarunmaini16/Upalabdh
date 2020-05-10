@@ -1,50 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Checbox list</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <title>Add to Cart</title>
     <link href="popup.css" rel="stylesheet">
-    <script src="popup.js"></script>
 </head>
 <body>
-<h1>
-    <center><font color="#ff1493"> TBD </font></center>
-</h1>
-<div id="checkbox_container">
 
+<div id="text">Upalabdh</div>
+<div id="content"> Aaya kya..?</div>
+<br><br>
+<hr>
 
-    <div id="upper_button_container">
-        <button id="getCurrentUrl">Add_Product</button>
-        <label id="AddedUrl"></label>
-        <!--		<button id="button_save">Save</button>-->
-        <!--        <button id="button_check">(Un)Check</button>-->
+<div id="container">
+    <div id="tophead">
+        <button id="add_product">Add</button>
     </div>
-    <div class="checkbox_group">
-        <input type="checkbox" id="Amazon"/><label for="Amazon">Amazon</label>
-    </div>
-    <div class="cart_items">
-        <label id="amazon_list"></label>
-    </div>
-    <div class="checkbox_group">
-        <input type="checkbox" id="BigBasket"/><label for="BigBasket">BigBasket</label>
-    </div>
-    <div class="checkbox_group">
-        <input type="checkbox" id="Flipkart"/><label for="Flipkart">Flipkart</label>
-    </div>
-    <div class="checkbox_group">
-        <input type="checkbox" id="Grofers"/><label for="Grofers">Grofers</label>
-    </div>
-    <div id="lower_button_container">
-        <label for="allItems">Drop Item:</label>
-        <select id="allItems">
-            <option value="volvo">Hersheys-Chocolate-Syrup</option>
-            <option value="saab">Hersheys-Chocolate-Syrup</option>
-            <option value="opel">Hersheys-Chocolate-Syrup</option>
-            <option value="audi">Hersheys-Chocolate-Syrup</option>
-        </select>
-        <button id="removeProduct">Remove_Product</button>
-        <label id="itemRemoved"></label>
-    </div>
+    <b>Amazon</b>
+    <div id="amazon_list" class="plist"></div>
+    <b>BigBasket</b>
+    <div id="bigbasket_list" class="plist"></div>
+    <b>Flipkart</b>
+    <div id="flipkart_list" class="plist"></div>
+    <hr>
+    <img src="1.png"> Available <img src="2.png"> Undeliverable
+    <img src="3.png"> Unavailable<img src="0.png"> New
+    <a href="https://tarunmaini16.github.io/" target="_blank">About</a>
 </div>
-<div id="status"></div>
+<script type="text/javascript" src="popup.js"></script>
 </body>
 </html>
