@@ -1,4 +1,4 @@
-var set_interval = 30;
+var set_interval = 18;
 var tryThis;
 var sourceOfTruth = 'prod';
 var notMes = ['UNKNOWN', 'AVAILABLE', 'UNDELIVERABLE', 'UNAVAILABLE']
@@ -30,21 +30,22 @@ function getLocators() {
     if (sourceOfTruth == 'test') {
         source = 'scratch.json'
     } else
-        source = 'https://80006633-368a-4e97-bab2-9c94dee6afdd.mock.pstmn.io'
+    // source = 'https://80006633-368a-4e97-bab2-9c94dee6afdd.mock.pstmn.io'
     // xmlhttp.open("GET", "https://raw.githubusercontent.com/tarunmaini16/Upalabdh/master/locators.json", true);
     // xmlhttp.open("GET", "https://bf8e93a4-c698-4fbc-a3b4-a3e0d530e69e.mock.pstmn.io", true);
-    xmlhttp.open("GET", source, true);
-    // xmlhttp.open("GET", "scratch.json", true);
+    // xmlhttp.open("GET", source, true);
+        xmlhttp.open("GET", "scratch.json", true);
     xmlhttp.setRequestHeader('Cache-Control', 'no-cache');
     xmlhttp.send();
 }
 
 var i_cnt = 0;
+
 function check_stat() {
     console.log('in update')
-    getLocators();
+    if (new Date().getHours() % 1 == 0 || tryThis == undefined) getLocators();
     products = getJSON('productList');
-    console.log('valie of prodducts: '+  products)
+    console.log('valie of prodducts: ' + products)
     if (products != null) i_cnt = products.length
     var xhr = [], i;
     for (let i = 0; i < i_cnt; i++) { //for loop
@@ -76,10 +77,10 @@ function check_stat() {
                                 setJSON('productList', products);
                                 console.log('After: i: ' + i + '  name: ' + products[i].name + '  id: ' + products[i].id + '  status: ' + products[i].status)
                                 break;
-                            } else if (Object.values(tryThis[j_cnt][j]) == null) {
-                                console.log("Facing issue, due to some change happened from backend, Raise ticket at @.com to get this fixed. Share some details with this url " + products[i].url)
                             }
                         }
+                    if (actual == null || actual == undefined)
+                        console.log("Facing issue, due to some change happened")
                     }
                 }
             };
@@ -87,8 +88,12 @@ function check_stat() {
         })(i);
     }
     setTimeout(function () {
-        if ( i_cnt > 0 || getJSON('productList') != null ) check_stat()
-        else console.log('No product in the list')
+        if (i_cnt > 0 || getJSON('productList') != null) {
+            check_stat();
+        } else {
+            console.log('No product in the list');
+            check_stat();
+        }
     }, set_interval * 1000);
 };
 setTimeout(check_stat, 5 * 1000);
