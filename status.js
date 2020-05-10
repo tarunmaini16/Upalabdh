@@ -1,4 +1,4 @@
-var set_interval = 18;
+var set_interval = 30;
 var tryThis;
 var sourceOfTruth = 'prod';
 var notMes = ['UNKNOWN', 'AVAILABLE', 'UNDELIVERABLE', 'UNAVAILABLE']
@@ -61,7 +61,7 @@ function check_stat() {
                         // console.log("keys: "+ Object.keys(tryThis[j_cnt][j]) + " :: values: "+Object.values(tryThis[j_cnt][j]))
                         var actual = xhr[i].response.querySelector(Object.keys(tryThis[j_cnt][j]))
                         if (actual != null) {
-                            if (JSON.stringify(Object.values(tryThis[j_cnt][j])).includes(actual.innerText.trim())
+                            if ( (JSON.stringify(Object.values(tryThis[j_cnt][j])).toUpperCase()).includes((actual.innerText.trim()).toUpperCase())
                                 && (products[i].status != parseInt((JSON.stringify(Object.values(tryThis[j_cnt][j]))).charAt(2)))) {
                                 console.log('Before: i: ' + i + '  name: ' + products[i].name + '  id: ' + products[i].id + '  status: ' + products[i].status)
                                 let prev_status = products[i].status
@@ -79,8 +79,8 @@ function check_stat() {
                                 break;
                             }
                         }
-                    if (actual == null || actual == undefined)
-                        console.log("Facing issue, due to some change happened")
+                    if (actual == null && actual == undefined && j == tryThis[j_cnt].length)
+                        console.log("some change happened")
                     }
                 }
             };
