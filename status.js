@@ -39,12 +39,15 @@ function getLocators() {
     xmlhttp.send();
 }
 
+var i_cnt = 0;
 function check_stat() {
     console.log('in update')
     getLocators();
     products = getJSON('productList');
+    console.log('valie of prodducts: '+  products)
+    if (products != null) i_cnt = products.length
     var xhr = [], i;
-    for (let i = 0, i_cnt = products.length; i < i_cnt; i++) { //for loop
+    for (let i = 0; i < i_cnt; i++) { //for loop
         (function (i) {
             xhr[i] = new XMLHttpRequest();
             xhr[i].responseType = 'document';
@@ -84,8 +87,8 @@ function check_stat() {
         })(i);
     }
     setTimeout(function () {
-        if (getJSON('productList').length > 0) check_stat()
-        else console.log('no product in list')
+        if ( i_cnt > 0 || getJSON('productList') != null ) check_stat()
+        else console.log('No product in the list')
     }, set_interval * 1000);
 };
 setTimeout(check_stat, 5 * 1000);
