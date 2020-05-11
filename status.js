@@ -97,3 +97,9 @@ function check_stat() {
     }, set_interval * 1000);
 };
 setTimeout(check_stat, 5 * 1000);
+
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+    if (message.text == "listEdited") {
+        check_stat()
+    }
+});
