@@ -1,7 +1,8 @@
 var set_interval = 30;
 var tryThis;
-var sourceOfTruth = 'prod';
-var notMes = ['UNKNOWN', 'AVAILABLE', 'UNDELIVERABLE', 'UNAVAILABLE']
+var environment = 'prod';
+var notMes = ['UNKNOWN', 'AVAILABLE', 'UNDELIVERABLE', 'UNAVAILABLE'];
+var sourceOfTruth = 'https://raw.githubusercontent.com/tarunmaini16/Upalabdh/master/Util/locators.json';
 
 function getJSON(key) {
     return JSON.parse(window.localStorage.getItem(key));
@@ -26,11 +27,10 @@ function getLocators() {
             tryThis = JSON.parse(this.response)
         }
     };
-    if (sourceOfTruth == 'test') {
-        source = 'scratch.json'
+    if (environment == 'test') {
+        sourceOfTruth = 'scratch.json'
     } else
-    xmlhttp.open("GET", "https://raw.githubusercontent.com/tarunmaini16/Upalabdh/master/Util/locators.json", true);
-    xmlhttp.open("GET", source, true);
+    xmlhttp.open("GET", sourceOfTruth, true);
         xmlhttp.open("GET", "scratch.json", true);
     xmlhttp.setRequestHeader('Cache-Control', 'no-cache');
     xmlhttp.send();
