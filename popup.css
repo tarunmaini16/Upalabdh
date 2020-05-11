@@ -71,7 +71,7 @@ margin-left: 7px
 
 img {
 width: 14.5px;
-margin-left: 7px;
+margin-left: 6px;
 vertical-align: text-bottom;
 }
 
@@ -98,4 +98,12 @@ margin: 10px;
 
 a:hover {
 color: hotpink;
+}
+
+#about {
+margin-left: 25px;
+}
+
+#bin {
+margin-left: 16px;
 }
