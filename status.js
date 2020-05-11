@@ -1,4 +1,4 @@
-var set_interval = 30;
+var set_interval = 3600;
 var tryThis;
 var environment = 'prod';
 var notMes = ['UNKNOWN', 'AVAILABLE', 'UNDELIVERABLE', 'UNAVAILABLE'];
