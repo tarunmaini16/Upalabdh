@@ -63,7 +63,7 @@ function product_list_insert(prod, feature) {
     try {
         target_elem.insertAdjacentHTML("beforeend", '<div id="prod_list_' +
             prod.id + '" class="pitem ' + class_ins + '"><img src="' + prod.status + '.png"><div class="pname">' + prod_name +
-            ' </div><div id="dprod_' + prod.id + '" class="pdel"><img src="bin.png"></div></div>');
+            ' </div><div id="dprod_' + prod.id + '" class="pdel"><img src="bin.png" id="bin"></div></div>');
     } catch (e) {
         alert("Seems like we are not on the correct site")
     }
@@ -108,9 +108,9 @@ function product_add() {
         let new_prod = {shop: shop_id, name: product_name, id: (get_max_id() + 1), status: 0, url: getCurrentUrl}
 
         products.push(new_prod)
-        // chrome.runtime.sendMessage({text: "item added"});
         product_list_insert(new_prod, true);
         setJSON('productList', products);
+        chrome.runtime.sendMessage({text: "listEdited"});
     });
 }
 
