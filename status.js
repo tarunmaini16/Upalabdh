@@ -24,7 +24,6 @@ function getLocators() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             tryThis = JSON.parse(this.response)
-            // console.log(tryThis)
         }
     };
     if (sourceOfTruth == 'test') {
@@ -42,14 +41,12 @@ function getLocators() {
 var i_cnt = 0;
 
 function check_stat() {
-    console.log('in update')
     if (new Date().getHours() % 1 == 0 || tryThis == undefined) getLocators();
     products = getJSON('productList');
-    console.log('valie of prodducts: ' + products)
     if (products != null) i_cnt = products.length
     var xhr = [], i;
     for (let i = 0; i < i_cnt; i++) { //for loop
-        (function (i) {
+        // (function (i) {
             xhr[i] = new XMLHttpRequest();
             xhr[i].responseType = 'document';
             itemUrl = products[i].url;
@@ -57,35 +54,29 @@ function check_stat() {
             xhr[i].onreadystatechange = function () {
                 if (xhr[i].readyState === 4 && xhr[i].status === 200) {
                     for (let j = 0, j_cnt = products[i].shop; j < tryThis[j_cnt].length; j++) {
-                        // console.log( tryThis[j_cnt][j])
-                        // console.log("keys: "+ Object.keys(tryThis[j_cnt][j]) + " :: values: "+Object.values(tryThis[j_cnt][j]))
                         var actual = xhr[i].response.querySelector(Object.keys(tryThis[j_cnt][j]))
                         if (actual != null) {
                             if ( (JSON.stringify(Object.values(tryThis[j_cnt][j])).toUpperCase()).includes((actual.innerText.trim()).toUpperCase())
                                 && (products[i].status != parseInt((JSON.stringify(Object.values(tryThis[j_cnt][j]))).charAt(2)))) {
-                                console.log('Before: i: ' + i + '  name: ' + products[i].name + '  id: ' + products[i].id + '  status: ' + products[i].status)
                                 let prev_status = products[i].status
                                 products[i].status = parseInt((JSON.stringify(Object.values(tryThis[j_cnt][j]))).charAt(2))
                                 var opt = {
                                     type: "basic",
-                                    title: notMes[products[i].status] + " B-" + prev_status + ":  N-" + products[i].status,
+                                    title: notMes[products[i].status],
                                     message: products[i].name,
                                     requireInteraction: true,
                                     iconUrl: products[i].status + ".png"
                                 }
                                 chrome.notifications.create('Status' + products[i].id, opt, diag)
                                 setJSON('productList', products);
-                                console.log('After: i: ' + i + '  name: ' + products[i].name + '  id: ' + products[i].id + '  status: ' + products[i].status)
                                 break;
                             }
                         }
-                    if (actual == null && actual == undefined && j == tryThis[j_cnt].length)
-                        console.log("some change happened")
                     }
                 }
             };
             xhr[i].send();
-        })(i);
+        // })(i);
     }
     setTimeout(function () {
         if (i_cnt > 0 || getJSON('productList') != null) {

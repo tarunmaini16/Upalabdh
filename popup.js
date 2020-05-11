@@ -28,23 +28,12 @@ function product_del(id) {
     setTimeout(function () {
         if (window.confirm('Do you want delete this product?')) {
             del_elem.remove();
-            console.log(products);
             products.splice(product_id, 1);
-            console.log(products);
             setJSON('productList', products);
         } else del_elem.classList.remove("ptodel");
     }, 80);
 
 }
-
-chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-    if (message.text == "cs") {
-        console.log("Popup says it was opened.");
-        products.forEach(prod =>
-            product_list_insert(prod, false)
-        );
-    }
-});
 
 function product_list_insert(prod, feature) {
     let class_ins = '';
@@ -99,8 +88,6 @@ function product_add() {
         for (domain in esites) {
             if (productNameToArray[2].includes(domain)) {
                 var shop_id = domain
-                // console.log(esites[shop_id])  //work
-                // console.log(esites[domain])  //work
                 var getIndex = esites[shop_id]
                 product_name = productNameToArray[getIndex]
             }
