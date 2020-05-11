@@ -4,6 +4,7 @@ var environment = 'prod';
 var notMes = ['UNKNOWN', 'AVAILABLE', 'UNDELIVERABLE', 'UNAVAILABLE'];
 var sourceOfTruth = 'https://raw.githubusercontent.com/tarunmaini16/Upalabdh/master/Util/locators.json';
 
+
 function getJSON(key) {
     return JSON.parse(window.localStorage.getItem(key));
 }
@@ -39,12 +40,11 @@ function getLocators() {
 var i_cnt = 0;
 
 function check_stat() {
-    if (new Date().getHours() % 1 == 0 || tryThis == undefined) getLocators();
+    if (new Date().getHours() % 8 == 0 || tryThis == undefined) getLocators();
     products = getJSON('productList');
     if (products != null) i_cnt = products.length
     var xhr = [], i;
-    for (let i = 0; i < i_cnt; i++) { //for loop
-        // (function (i) {
+    for (let i = 0; i < i_cnt; i++) {
             xhr[i] = new XMLHttpRequest();
             xhr[i].responseType = 'document';
             itemUrl = products[i].url;
@@ -74,7 +74,6 @@ function check_stat() {
                 }
             };
             xhr[i].send();
-        // })(i);
     }
     setTimeout(function () {
         if (i_cnt > 0 || getJSON('productList') != null) {

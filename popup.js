@@ -1,5 +1,5 @@
 var products = [];
-var esites = {amazon: 3, bigbasket: 5, flipkart: 3} //this part is index of url from where to fetch product name
+var esites = {amazon: 3, bigbasket: 5, flipkart: 3}
 var getCurrentUrl;
 var product_name;
 var allshops;
@@ -17,7 +17,6 @@ function product_del(id) {
     del_elem.classList.add("ptodel");
 
     let product_id = 0;
-    // search product
     for (let i = 0, i_cnt = products.length; i < i_cnt; i++) {
         if (products[i].id == id) {
             product_id = i;
@@ -57,12 +56,10 @@ function product_list_insert(prod, feature) {
         alert("Seems like we are not on the correct site")
     }
 
-
     var button = document.getElementById('dprod_' + prod.id);
     button.onclick = function () {
         product_del(prod.id)
     };
-
 }
 
 function get_max_id() {
@@ -115,4 +112,3 @@ document.addEventListener('DOMContentLoaded', function product_list_init() {
         product_list_insert(prod, false)
     );
 });
-// window.onload = product_list_init();
