@@ -29,10 +29,8 @@ function getLocators() {
     if (sourceOfTruth == 'test') {
         source = 'scratch.json'
     } else
-    // source = 'https://80006633-368a-4e97-bab2-9c94dee6afdd.mock.pstmn.io'
-    // xmlhttp.open("GET", "https://raw.githubusercontent.com/tarunmaini16/Upalabdh/master/locators.json", true);
-    // xmlhttp.open("GET", "https://bf8e93a4-c698-4fbc-a3b4-a3e0d530e69e.mock.pstmn.io", true);
-    // xmlhttp.open("GET", source, true);
+    xmlhttp.open("GET", "https://raw.githubusercontent.com/tarunmaini16/Upalabdh/master/Util/locators.json", true);
+    xmlhttp.open("GET", source, true);
         xmlhttp.open("GET", "scratch.json", true);
     xmlhttp.setRequestHeader('Cache-Control', 'no-cache');
     xmlhttp.send();
