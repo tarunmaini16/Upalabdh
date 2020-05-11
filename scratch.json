@@ -2,6 +2,7 @@
     "amazon": [
         {"#availability-string > span": "1_In Stock."},
         {"#availability > span": "1_In stock."},
+        {"#availability > span": "1_Available from these sellers."},
         {"#ddmDeliveryMessage > span": "2_Available-But not deliverable at your pincode"},
         {"#availability > span": "3_Currently unavailable."}
     ], "flipkart": [
