@@ -1,4 +1,4 @@
-var set_interval = 3600;
+var set_interval = 1800;
 var tryThis;
 var environment = 'prod';
 var notMes = ['UNKNOWN', 'AVAILABLE', 'UNDELIVERABLE', 'UNAVAILABLE'];
@@ -30,7 +30,7 @@ function getLocators() {
     };
     if (environment == 'test') {
         sourceOfTruth = 'scratch.json'
-    } else
+    }
     xmlhttp.open("GET", sourceOfTruth, true);
         xmlhttp.open("GET", "scratch.json", true);
     xmlhttp.setRequestHeader('Cache-Control', 'no-cache');
@@ -40,7 +40,8 @@ function getLocators() {
 var i_cnt = 0;
 
 function check_stat() {
-    if (new Date().getHours() % 8 == 0 || tryThis == undefined) getLocators();
+    // if (new Date().getHours() % 8 == 0 || tryThis == undefined)
+        getLocators();
     products = getJSON('productList');
     if (products != null) i_cnt = products.length
     var xhr = [], i;
