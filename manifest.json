@@ -16,7 +16,15 @@
     "tabs",
     "storage",
     "notifications",
-    "https://*/"
+    "https://raw.githubusercontent.com/tarunmaini16/Upalabdh/master/Util/locators.json",
+    "https://*.amazon.in/*",
+    "https://*.amazon.de/*",
+    "https://*.amazon.com/*",
+    "https://*.amazon.co.uk/*",
+    "https://*.amazon.co.jp/*",
+    "https://*.flipkart.in/*",
+    "https://*.flipkart.com/*",
+    "https://*.bigbasket.com/*"
   ],
   "web_accessible_resources": [
     "icon_kr.png"

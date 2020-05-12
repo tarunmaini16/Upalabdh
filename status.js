@@ -32,7 +32,7 @@ function getLocators() {
         sourceOfTruth = 'scratch.json'
     }
     xmlhttp.open("GET", sourceOfTruth, true);
-        xmlhttp.open("GET", "scratch.json", true);
+        xmlhttp.open("GET", sourceOfTruth, true);
     xmlhttp.setRequestHeader('Cache-Control', 'no-cache');
     xmlhttp.send();
 }
