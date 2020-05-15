@@ -2,11 +2,12 @@
 [उपलब्ध](https://translate.google.co.in/#view=home&op=translate&sl=auto&tl=hi&text=Available) - Utility to monitor the availability of products at E-Commerce Stores
 
 ###### Features are as follow:
-1. Allows to save list of products.
+1. Allows to save list of products on click of Add button when on product page.
 2. Receive notification when the product status changes.
 3. Colored indicators to show status of product.
 4. Ability to add/detete products.
 5. Supports Amazon, Flipkart and BigBasket.
+6. Continous polling after 30 minutes 
 
 <img width="1000" alt="extensionPopup" src="https://user-images.githubusercontent.com/22731126/81734590-59817500-94b1-11ea-8702-5d04ffb19bb3.png">
 
