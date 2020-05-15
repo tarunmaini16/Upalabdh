@@ -1,6 +1,5 @@
 # **Upalabdh**  
-[उपलब्ध] - Utility to monitor the availability of products at E-Commerce Stores
-
+[उपलब्ध](https://translate.google.co.in/#view=home&op=translate&sl=auto&tl=hi&text=Available) - Utility to monitor the availability of products at E-Commerce Stores
 
 ###### Features are as follow:
 1. Allows to save list of products.
@@ -16,3 +15,4 @@
 <img width="425" alt="orange2" src="https://user-images.githubusercontent.com/22731126/81734653-74ec8000-94b1-11ea-8a00-0cad7ff916d1.png"><img width="425" alt="grey" src="https://user-images.githubusercontent.com/22731126/81734641-70c06280-94b1-11ea-995a-2dc8879961ae.png">
 
 <img width="1000" alt="deleteProduct" src="https://user-images.githubusercontent.com/22731126/81735203-5044d800-94b2-11ea-8d7e-e5e417468fd7.png">
+
